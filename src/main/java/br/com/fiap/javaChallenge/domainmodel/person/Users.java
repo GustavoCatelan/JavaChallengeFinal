@@ -12,7 +12,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Builder
 @Entity
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User user)) return false;
+        if (!(o instanceof Users user)) return false;
         return id == user.id;
     }
 

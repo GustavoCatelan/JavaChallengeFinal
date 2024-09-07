@@ -20,51 +20,51 @@ public class AddressController {
     @Autowired
     private @Setter AddressServiceImpl service;
 
-    @GetMapping("/addNew")
+    @GetMapping("/addNewAddress")
     public String addNewAddress( Model model ){
         Address add = new Address();
         model.addAttribute("address", add);
         return "newAddress";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveAddress")
     public String save( @ModelAttribute("address") Address address ){
         this.service.save( address );
-        return "redirect:/";
+        return "redirect:/address";
     }
 
     @GetMapping("/deleteAddress/{id}")
     public String  deleteThroughId( @PathVariable("id") Long id){
         this.service.deleteById(id);
-        return "redirect:/";
+        return "redirect:/address";
     }
 
     //http://locahost:8080/
-    @GetMapping("/")
+    @GetMapping("/address")
     public String viewHomePageAsList(Model model){
         List<Address> addressList = this.service.findAllAddress();
         model.addAttribute("allAddressList", addressList);
         return "index";
     }
 
-    @GetMapping("/showFormForUpdate/{id}")
+    @GetMapping("/showFormForUpdateAddress/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model){
         Optional<Address> address  = this.service.findById(id);
         if(address.isPresent())
             model.addAttribute("employee", address.get());
         else
             System.out.println("Erro");
-        return "update";
+        return "updateAddress";
 
     }
 
-    @PostMapping("/update")
+    @PostMapping("/updateAddress")
     public String update( @ModelAttribute("address") Address address ){
         this.service.save( address );
-        return "redirect:/";
+        return "redirect:/address";
     }
 
-    @GetMapping("/show/{id}")
+    @GetMapping("/showAddress/{id}")
     public String showAddress( @PathVariable("id") Long id, Model model){
         Optional<Address> address = this.service.findById(id);
 

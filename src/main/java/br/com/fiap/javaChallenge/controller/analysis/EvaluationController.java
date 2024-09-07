@@ -20,51 +20,51 @@ public class EvaluationController {
     @Autowired
     private @Setter EvaluationServiceImpl service;
 
-    @GetMapping("/addNew")
+    @GetMapping("/addNewEvaluation")
     public String addNewEmployee( Model model ){
         Evaluation eva = new Evaluation();
         model.addAttribute("evaluation", eva);
         return "newEvaluation";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveEvaluation")
     public String save( @ModelAttribute("evaluation") Evaluation evaluation ){
         this.service.save( evaluation );
-        return "redirect:/";
+        return "redirect:/evaluation";
     }
 
     @GetMapping("/deleteEvaluation/{id}")
     public String deleteThroughId( @PathVariable("id") Long id){
         this.service.deleteById(id);
-        return "redirect:/";
+        return "redirect:/evaluation";
     }
 
     //http://locahost:8080/
-    @GetMapping("/")
+    @GetMapping("/evaluation")
     public String viewHomePageAsList(Model model){
         List<Evaluation> evaluationList = this.service.findAllEvaluation();
         model.addAttribute("allEvaluationList", evaluationList);
         return "index";
     }
 
-    @GetMapping("/showFormForUpdate/{id}")
+    @GetMapping("/showFormForUpdateEvaluation/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model){
         Optional<Evaluation> evaluation  = this.service.findById(id);
         if(evaluation.isPresent())
             model.addAttribute("evaluation", evaluation.get());
         else
             System.out.println("Erro");
-        return "update";
+        return "updateEvaluation";
 
     }
 
-    @PostMapping("/update")
+    @PostMapping("/updateEvaluation")
     public String update( @ModelAttribute("evaluation") Evaluation evaluation ){
         this.service.save( evaluation );
-        return "redirect:/";
+        return "redirect:/evaluation";
     }
 
-    @GetMapping("/show/{id}")
+    @GetMapping("/showEvaluation/{id}")
     public String showEvaluation( @PathVariable("id") Long id, Model model){
         Optional<Evaluation> evaluation = this.service.findById(id);
 

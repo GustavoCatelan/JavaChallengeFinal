@@ -14,4 +14,5 @@ public interface AddressService {
     void deleteById(long id);
 
     List<Address> findAllAddress();
+
 }
