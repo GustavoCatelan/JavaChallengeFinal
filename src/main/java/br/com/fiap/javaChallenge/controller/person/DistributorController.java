@@ -39,7 +39,6 @@ public class DistributorController {
         return "redirect:/distributor";
     }
 
-    //http://locahost:8080/
     @GetMapping("/distributor")
     public String viewHomePageAsList(Model model){
         List<Distributor> distributorList = this.service.findAllDistributor();
@@ -53,7 +52,7 @@ public class DistributorController {
         if(distributor.isPresent())
             model.addAttribute("distributor", distributor.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "updateDistributor";
 
     }
@@ -71,7 +70,7 @@ public class DistributorController {
         if( distributor.isPresent() )
             model.addAttribute("distributor", distributor.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "showDistributor";
     }
 }

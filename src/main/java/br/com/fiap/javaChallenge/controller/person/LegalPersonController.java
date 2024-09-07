@@ -39,7 +39,6 @@ public class LegalPersonController {
         return "redirect:/legalPerson";
     }
 
-    //http://locahost:8080/
     @GetMapping("/legalPerson")
     public String viewHomePageAsList(Model model){
         List<LegalPerson> legalPersonList = this.service.findAllLegalPerson();
@@ -53,7 +52,7 @@ public class LegalPersonController {
         if(legalPerson.isPresent())
             model.addAttribute("legalPerson", legalPerson.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "updateLegalPerson";
 
     }
@@ -71,7 +70,7 @@ public class LegalPersonController {
         if( legalPerson.isPresent() )
             model.addAttribute("legalPerson", legalPerson.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "showLegalPerson";
     }
 }

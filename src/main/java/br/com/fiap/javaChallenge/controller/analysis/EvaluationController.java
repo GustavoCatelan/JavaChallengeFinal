@@ -39,7 +39,6 @@ public class EvaluationController {
         return "redirect:/evaluation";
     }
 
-    //http://locahost:8080/
     @GetMapping("/evaluation")
     public String viewHomePageAsList(Model model){
         List<Evaluation> evaluationList = this.service.findAllEvaluation();
@@ -53,7 +52,7 @@ public class EvaluationController {
         if(evaluation.isPresent())
             model.addAttribute("evaluation", evaluation.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "updateEvaluation";
 
     }
@@ -71,7 +70,7 @@ public class EvaluationController {
         if( evaluation.isPresent() )
             model.addAttribute("evaluation", evaluation.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "showEvaluation";
     }
 }

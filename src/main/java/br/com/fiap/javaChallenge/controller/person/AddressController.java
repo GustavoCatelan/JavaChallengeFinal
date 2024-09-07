@@ -39,7 +39,6 @@ public class AddressController {
         return "redirect:/address";
     }
 
-    //http://locahost:8080/
     @GetMapping("/address")
     public String viewHomePageAsList(Model model){
         List<Address> addressList = this.service.findAllAddress();
@@ -53,7 +52,7 @@ public class AddressController {
         if(address.isPresent())
             model.addAttribute("employee", address.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "updateAddress";
 
     }
@@ -71,7 +70,7 @@ public class AddressController {
         if( address.isPresent() )
             model.addAttribute("address", address.get());
         else
-            System.out.println("Erro");
+            System.out.println("Error");
         return "showAddress";
     }
 }
