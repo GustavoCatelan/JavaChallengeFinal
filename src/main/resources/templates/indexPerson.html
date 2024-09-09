@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html lan="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"><!-- comment -->
+    <title> Person</title><!-- comment -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container" align="center">
+    <h3>PersonList List</h3>
+    <a th:href="@{/addNewPerson}" class="btn btn-primary btn-sm btn-mb-3">Add Person</a>
+    <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Person:${allPersonList}">
+            <td th:text="${person.name}"></td>
+            <td>
+                <a th:href="@{/showFormForUpdatePerson/{id}(id=${person.id})}" class="btn btn-primary">Update</a><!-- comment -->
+                <a th:href="@{/deletePerson/{id}(id=${person.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
