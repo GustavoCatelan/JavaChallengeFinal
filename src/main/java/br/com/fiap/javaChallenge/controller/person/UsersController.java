@@ -43,7 +43,7 @@ public class UsersController {
     public String viewHomePageAsList(Model model){
         List<Users> usersList = this.service.findAllUser();
         model.addAttribute("allUsersList", usersList);
-        return "index";
+        return "indexUsers";
     }
 
     @GetMapping("/showFormForUpdateUsers/{id}")

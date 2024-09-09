@@ -43,7 +43,7 @@ public class LegalPersonController {
     public String viewHomePageAsList(Model model){
         List<LegalPerson> legalPersonList = this.service.findAllLegalPerson();
         model.addAttribute("allLegalPersonList", legalPersonList);
-        return "index";
+        return "indexLegalPerson";
     }
 
     @GetMapping("/showFormForUpdateLegalPerson/{id}")

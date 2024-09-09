@@ -43,7 +43,7 @@ public class AddressController {
     public String viewHomePageAsList(Model model){
         List<Address> addressList = this.service.findAllAddress();
         model.addAttribute("allAddressList", addressList);
-        return "index";
+        return "indexAddress";
     }
 
     @GetMapping("/showFormForUpdateAddress/{id}")

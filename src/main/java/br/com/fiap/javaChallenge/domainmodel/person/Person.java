@@ -15,7 +15,10 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_PERSON")
     private @Getter @Setter Long id;
+
+    @Column(name = "NAME_PERSON")
     private @Getter @Setter String name;
 
     @Override

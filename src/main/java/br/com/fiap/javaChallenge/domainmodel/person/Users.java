@@ -1,9 +1,6 @@
 package br.com.fiap.javaChallenge.domainmodel.person;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Objects;
@@ -16,8 +13,13 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_USER")
     private @Getter @Setter Long id;
+
+    @Column(name = "NM_USER")
     private @Getter @Setter String username;
+
+    @Column(name = "PASS_USER")
     private @Getter @Setter String password;
 
     @Override
@@ -31,4 +33,14 @@ public class Users {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "PERSON",
+            referencedColumnName = "ID_PERSON",
+            foreignKey = @ForeignKey(
+                    name = "FK_USERS_PERSON"
+            )
+    )
+    private Person person;
 }

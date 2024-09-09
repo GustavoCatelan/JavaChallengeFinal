@@ -43,7 +43,7 @@ public class DistributorController {
     public String viewHomePageAsList(Model model){
         List<Distributor> distributorList = this.service.findAllDistributor();
         model.addAttribute("allDistributorList", distributorList);
-        return "index";
+        return "indexDistributor";
     }
 
     @GetMapping("/showFormForUpdateDistributor/{id}")

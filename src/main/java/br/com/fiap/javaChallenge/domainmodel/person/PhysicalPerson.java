@@ -1,5 +1,6 @@
 package br.com.fiap.javaChallenge.domainmodel.person;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -10,8 +11,9 @@ import lombok.experimental.SuperBuilder;
 @Entity
 public class PhysicalPerson extends Person {
 
-    private @Getter @Setter String cnpj;
-    private @Getter @Setter String name;
-    private @Getter @Setter String legalNature;
-    private @Getter @Setter String situation;
+    @Column(name = "CPF_PPERSON")
+    private @Getter @Setter String cpf;
+
+    @Column(name = "RG_PPERSON")
+    public @Getter @Setter String rg;
 }

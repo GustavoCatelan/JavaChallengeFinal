@@ -43,7 +43,7 @@ public class ProductController {
     public String viewHomePageAsList(Model model){
         List<Product> productList = this.service.findAllProduct();
         model.addAttribute("allProductList", productList);
-        return "index";
+        return "indexProduct";
     }
 
     @GetMapping("/showFormForUpdateProduct/{id}")

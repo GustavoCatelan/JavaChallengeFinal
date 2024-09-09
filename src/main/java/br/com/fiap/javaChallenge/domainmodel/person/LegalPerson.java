@@ -1,10 +1,12 @@
 package br.com.fiap.javaChallenge.domainmodel.person;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,7 +14,16 @@ import java.util.Objects;
 @Entity
 public class LegalPerson extends Person{
 
-    private @Getter @Setter String cpf;
-    public @Getter @Setter String rg;
+    @Column(name = "CNPJ_LPERSON")
+    private @Getter @Setter String cnpj;
+
+    @Column(name = "NAME_LPERSON")
+    private @Getter @Setter String name;
+
+    @Column(name = "NAT_LPERSON")
+    private @Getter @Setter String legalNature;
+
+    @Column(name = "SIT_LPERSON")
+    private @Getter @Setter String situation;
 
 }

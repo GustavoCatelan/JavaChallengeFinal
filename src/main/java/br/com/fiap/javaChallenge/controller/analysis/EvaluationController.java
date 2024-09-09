@@ -43,7 +43,7 @@ public class EvaluationController {
     public String viewHomePageAsList(Model model){
         List<Evaluation> evaluationList = this.service.findAllEvaluation();
         model.addAttribute("allEvaluationList", evaluationList);
-        return "index";
+        return "indexEvaluation";
     }
 
     @GetMapping("/showFormForUpdateEvaluation/{id}")

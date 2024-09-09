@@ -43,7 +43,7 @@ public class PhysicalPersonController {
     public String viewHomePageAsList(Model model){
         List<PhysicalPerson> physicalPersonList = this.service.findAllPhysicalPerson();
         model.addAttribute("allPhysicalPersonList", physicalPersonList);
-        return "index";
+        return "indexPhysicalPerson";
     }
 
     @GetMapping("/showFormForUpdatePhysicalPerson/{id}")

@@ -43,7 +43,7 @@ public class ServiceController {
     public String viewHomePageAsList(Model model){
         List<Service> serviceList = this.service.findAllService();
         model.addAttribute("allServiceList", serviceList);
-        return "index";
+        return "indexService";
     }
 
     @GetMapping("/showFormForUpdateService/{id}")

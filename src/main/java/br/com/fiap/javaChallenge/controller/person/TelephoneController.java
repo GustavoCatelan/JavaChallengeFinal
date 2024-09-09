@@ -43,7 +43,7 @@ public class TelephoneController {
     public String viewHomePageAsList(Model model){
         List<Telephone> telephoneList = this.service.findAllTelephone();
         model.addAttribute("allTelephoneList", telephoneList);
-        return "index";
+        return "indexTelephone";
     }
 
     @GetMapping("/showFormForUpdateTelephone/{id}")
