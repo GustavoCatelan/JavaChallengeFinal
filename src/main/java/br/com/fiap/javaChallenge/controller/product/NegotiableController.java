@@ -60,7 +60,7 @@ public class NegotiableController {
     @PostMapping("/updateNegotiable")
     public String update( @ModelAttribute("negotiable") Negotiable negotiable ){
         this.service.save( negotiable );
-        return "redirect:/Negotiable";
+        return "redirect:/negotiable";
     }
 
     @GetMapping("/showNegotiable/{id}")

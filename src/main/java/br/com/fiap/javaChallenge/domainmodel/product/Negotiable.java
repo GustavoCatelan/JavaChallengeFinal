@@ -16,16 +16,16 @@ public class Negotiable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_NEGOTIABLE")
-    private @Setter Long id;
+    private @Getter @Setter Long id;
 
     @Column(name = "NM_NEGOTIABLE")
-    private @Setter String name;
+    private @Getter @Setter String name;
 
     @Column(name = "DESC_NEGOTIABLE")
-    private @Setter String description;
+    private @Getter @Setter String description;
 
     @Column(name = "PR_NEGOTIABLE")
-    private @Setter Float price;
+    private @Getter @Setter Float price;
 
     @Override
     public boolean equals(Object o) {

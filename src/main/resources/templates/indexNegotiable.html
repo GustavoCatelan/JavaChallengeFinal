@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Person List</title>
+    <title>Negotiable List</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -11,21 +11,25 @@
 
 <body>
 <div class="container" align="center">
-    <h3>Person List</h3>
-    <a th:href="@{/addNewPerson}" class="btn btn-primary btn-sm btn-mb-3">Add Person</a>
+    <h3>Negotiable List</h3>
+    <a th:href="@{/addNewNegotiable}" class="btn btn-primary btn-sm btn-mb-3">Add Negotiable</a>
     <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
         <thead>
         <tr>
             <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="person : ${allPersonList}">
-            <td th:text="${person.name}"></td>
+        <tr th:each="negotiable : ${allNegotiableList}">
+            <td th:text="${negotiable.name}"></td>
+            <td th:text="${negotiable.description}"></td>
+            <td th:text="${negotiable.price}"></td>
             <td>
-                <a th:href="@{/showFormForUpdatePerson/{id}(id=${person.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deletePerson/{id}(id=${person.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdateNegotiable/{id}(id=${negotiable.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteNegotiable/{id}(id=${negotiable.id})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </tbody>
