@@ -19,5 +19,6 @@ Instrução de como rodar a aplicação:
 - Execute o aplicativo no IntelliJ.
 - Abra um navegador da web.
 - Acesse a aplicação digitando o URL correspondente.
-Para inserir dados:
-- Você pode inserir dados diretamente no banco de dados ou, utilize o Postman para fazer requisições aos endpoints fornecidos, inserindo a URL e os valores correspondentes.
+- URLs:
+- http://localhost:8081/person
+- http://localhost:8081/negotiable
