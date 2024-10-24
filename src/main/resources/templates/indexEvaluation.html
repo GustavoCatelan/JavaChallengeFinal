@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Person List</title>
+    <title>Evaluation List</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -11,21 +11,23 @@
 
 <body>
 <div class="container" align="center">
-    <h3>Person List</h3>
-    <a th:href="@{/addNewPerson}" class="btn btn-primary btn-sm btn-mb-3">Add Person</a>
+    <h3>Evaluation List</h3>
+    <a th:href="@{/addNewEvaluation}" class="btn btn-primary btn-sm btn-mb-3">Add Evaluation</a>
     <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
         <thead>
         <tr>
-            <th>Name</th>
+            <th>Text</th>
+            <th>Date</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="person : ${allPersonList}">
-            <td th:text="${person.name}"></td>
+        <tr th:each="evaluation : ${allEvaluationList}">
+            <td th:text="${evaluation.text}"></td>
+            <td th:text="${evaluation.date}"></td>
             <td>
-                <a th:href="@{/showFormForUpdatePerson/{id}(id=${person.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deletePerson/{id}(id=${person.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdateEvaluation/{id}(id=${evaluation.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteEvaluation/{id}(id=${evaluation.id})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </tbody>

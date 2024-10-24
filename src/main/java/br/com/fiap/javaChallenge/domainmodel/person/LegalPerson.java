@@ -17,9 +17,6 @@ public class LegalPerson extends Person{
     @Column(name = "CNPJ_LPERSON")
     private @Getter @Setter String cnpj;
 
-    @Column(name = "NAME_LPERSON")
-    private @Getter @Setter String name;
-
     @Column(name = "NAT_LPERSON")
     private @Getter @Setter String legalNature;
 

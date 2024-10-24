@@ -21,7 +21,7 @@ public class EvaluationController {
     private @Setter EvaluationServiceImpl service;
 
     @GetMapping("/addNewEvaluation")
-    public String addNewEmployee( Model model ){
+    public String addNewEvaluation( Model model ){
         Evaluation eva = new Evaluation();
         model.addAttribute("evaluation", eva);
         return "newEvaluation";

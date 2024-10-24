@@ -50,7 +50,7 @@ public class AddressController {
     public String showUpdateForm(@PathVariable("id") Long id, Model model){
         Optional<Address> address  = this.service.findById(id);
         if(address.isPresent())
-            model.addAttribute("employee", address.get());
+            model.addAttribute("address", address.get());
         else
             System.out.println("Error");
         return "updateAddress";
