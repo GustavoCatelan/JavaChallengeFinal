@@ -36,7 +36,7 @@ public class PhysicalPersonController {
     @GetMapping("/deletePhysicalPerson/{id}")
     public String  deleteThroughId( @PathVariable("id") Long id){
         this.service.deleteById(id);
-        return "redirect:/";
+        return "redirect:/physicalPerson";
     }
 
     @GetMapping("/physicalPerson")
@@ -53,7 +53,7 @@ public class PhysicalPersonController {
             model.addAttribute("physicalPerson", physicalPerson.get());
         else
             System.out.println("Error");
-        return "update";
+        return "updatePhysicalPerson";
 
     }
 

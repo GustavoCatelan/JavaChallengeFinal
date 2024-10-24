@@ -41,4 +41,14 @@ public class HomeController {
         return "indexLegalPerson";
     }
 
+    @GetMapping("/indexPhysicalPerson")
+    public String indexPhysicalPerson() {
+        return "indexPhysicalPerson";
+    }
+
+    @GetMapping("/indexTelephone")
+    public String indexTelephone() {
+        return "indexTelephone";
+    }
+
 }
