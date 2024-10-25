@@ -62,15 +62,4 @@ public class AddressController {
         this.service.save( address );
         return "redirect:/address";
     }
-
-    @GetMapping("/showAddress/{id}")
-    public String showAddress( @PathVariable("id") Long id, Model model){
-        Optional<Address> address = this.service.findById(id);
-
-        if( address.isPresent() )
-            model.addAttribute("address", address.get());
-        else
-            System.out.println("Error");
-        return "showAddress";
-    }
 }

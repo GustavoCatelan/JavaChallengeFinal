@@ -62,15 +62,4 @@ public class TelephoneController {
         this.service.save( telephone );
         return "redirect:/telephone";
     }
-
-    @GetMapping("/showTelephone/{id}")
-    public String showTelephone( @PathVariable("id") Long id, Model model){
-        Optional<Telephone> telephone = this.service.findById(id);
-
-        if( telephone.isPresent() )
-            model.addAttribute("telephone", telephone.get());
-        else
-            System.out.println("Error");
-        return "showTelephone";
-    }
 }

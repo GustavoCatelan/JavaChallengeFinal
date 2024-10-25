@@ -62,15 +62,4 @@ public class ProductController {
         this.service.save( product );
         return "redirect:/product";
     }
-
-    @GetMapping("/showProduct/{id}")
-    public String showProduct( @PathVariable("id") Long id, Model model){
-        Optional<Product> product = this.service.findById(id);
-
-        if( product.isPresent() )
-            model.addAttribute("product", product.get());
-        else
-            System.out.println("Erros");
-        return "showProduct";
-    }
 }

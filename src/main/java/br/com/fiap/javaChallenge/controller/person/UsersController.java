@@ -62,15 +62,4 @@ public class UsersController {
         this.service.save( users );
         return "redirect:/users";
     }
-
-    @GetMapping("/showUsers/{id}")
-    public String showUsers( @PathVariable("id") Long id, Model model){
-        Optional<Users> users = this.service.findById(id);
-
-        if( users.isPresent() )
-            model.addAttribute("users", users.get());
-        else
-            System.out.println("Error");
-        return "showUsers";
-    }
 }

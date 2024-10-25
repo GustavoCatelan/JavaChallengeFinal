@@ -62,15 +62,4 @@ public class DistributorController {
         this.service.save( distributor );
         return "redirect:/distributor";
     }
-
-    @GetMapping("/showDistributor/{id}")
-    public String showDistributor( @PathVariable("id") Long id, Model model){
-        Optional<Distributor> distributor = this.service.findById(id);
-
-        if( distributor.isPresent() )
-            model.addAttribute("distributor", distributor.get());
-        else
-            System.out.println("Error");
-        return "showDistributor";
-    }
 }

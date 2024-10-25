@@ -63,14 +63,4 @@ public class LegalPersonController {
         return "redirect:/legalPerson";
     }
 
-    @GetMapping("/showLegalPerson/{id}")
-    public String showLegalPerson( @PathVariable("id") Long id, Model model){
-        Optional<LegalPerson> legalPerson = this.service.findById(id);
-
-        if( legalPerson.isPresent() )
-            model.addAttribute("legalPerson", legalPerson.get());
-        else
-            System.out.println("Error");
-        return "showLegalPerson";
-    }
 }

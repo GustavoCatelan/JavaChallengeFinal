@@ -63,14 +63,4 @@ public class EvaluationController {
         return "redirect:/evaluation";
     }
 
-    @GetMapping("/showEvaluation/{id}")
-    public String showEvaluation( @PathVariable("id") Long id, Model model){
-        Optional<Evaluation> evaluation = this.service.findById(id);
-
-        if( evaluation.isPresent() )
-            model.addAttribute("evaluation", evaluation.get());
-        else
-            System.out.println("Error");
-        return "showEvaluation";
-    }
 }

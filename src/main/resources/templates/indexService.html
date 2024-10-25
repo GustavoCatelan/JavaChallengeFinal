@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
-  <title>Distributor List</title>
+  <title>Service List</title>
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -92,27 +92,28 @@
     }
   </style>
 </head>
+
 <body>
 <div class="container" align="center">
-  <h3>Distributor List</h3>
-  <a th:href="@{/addNewDistributor}" class="btn btn-primary btn-sm btn-mb-3">Add Distributor</a>
+  <h3>Service List</h3>
+  <a th:href="@{/addNewService}" class="btn btn-primary btn-sm btn-mb-3">Add Service</a>
   <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
     <thead>
     <tr>
-      <th>Coverage Area</th>
-      <th>Location</th>
-      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
       <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="distributor : ${allDistributorList}">
-      <td th:text="${distributor.coverageArea}"></td>
-      <td th:text="${distributor.location}"></td>
-      <td th:text="${distributor.type}"></td>
+    <tr th:each="service : ${allServiceList}">
+      <td th:text="${service.name}"></td>
+      <td th:text="${service.description}"></td>
+      <td th:text="${service.price}"></td>
       <td>
-        <a th:href="@{/showFormForUpdateDistributor/{id}(id=${distributor.id})}" class="btn btn-primary">Update</a>
-        <a th:href="@{/deleteDistributor/{id}(id=${distributor.id})}" class="btn btn-danger">Delete</a>
+        <a th:href="@{/showFormForUpdateService/{id}(id=${service.id})}" class="btn btn-primary">Update</a>
+        <a th:href="@{/deleteService/{id}(id=${service.id})}" class="btn btn-danger">Delete</a>
       </td>
     </tr>
     </tbody>

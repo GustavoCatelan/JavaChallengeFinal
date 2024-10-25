@@ -62,15 +62,4 @@ public class ServiceController {
         this.service.save( service );
         return "redirect:/service";
     }
-
-    @GetMapping("/showService/{id}")
-    public String showService( @PathVariable("id") Long id, Model model){
-        Optional<Service> service = this.service.findById(id);
-
-        if( service.isPresent() )
-            model.addAttribute("service", service.get());
-        else
-            System.out.println("Error");
-        return "showService";
-    }
 }

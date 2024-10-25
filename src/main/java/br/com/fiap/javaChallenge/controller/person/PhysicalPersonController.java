@@ -62,15 +62,4 @@ public class PhysicalPersonController {
         this.service.save( physicalPerson );
         return "redirect:/physicalPerson";
     }
-
-    @GetMapping("/showPhysicalPerson/{id}")
-    public String showPhysicalPerson( @PathVariable("id") Long id, Model model){
-        Optional<PhysicalPerson> physicalPerson = this.service.findById(id);
-
-        if( physicalPerson.isPresent() )
-            model.addAttribute("physicalPerson", physicalPerson.get());
-        else
-            System.out.println("Error");
-        return "showPhysicalPerson";
-    }
 }
