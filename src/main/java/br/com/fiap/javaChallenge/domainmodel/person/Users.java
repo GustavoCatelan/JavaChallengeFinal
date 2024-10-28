@@ -25,7 +25,7 @@ public class Users {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Users user)) return false;
+        if (!(o instanceof br.com.fiap.javaChallenge.domainmodel.person.Users user)) return false;
         return id == user.id;
     }
 
@@ -43,4 +43,5 @@ public class Users {
             )
     )
     private Person person;
+
 }
