@@ -10,7 +10,7 @@ Integrantes:
 
 2TDSPJ - Victor Taborda Rodrigues - RM97900
 
-2TDSPW - Allan Percario - RM99903
+2TDSPJ - Gabriel Bacelar Valentim - RM97901
 
 Instrução de como rodar a aplicação:
 - Clone o repositório do projeto InovaX.
@@ -20,5 +20,4 @@ Instrução de como rodar a aplicação:
 - Abra um navegador da web.
 - Acesse a aplicação digitando o URL correspondente.
 - URLs:
-- http://localhost:8081/person
-- http://localhost:8081/negotiable
+- http://localhost:8080/login
