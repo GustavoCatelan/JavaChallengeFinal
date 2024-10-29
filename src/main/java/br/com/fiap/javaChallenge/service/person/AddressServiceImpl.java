@@ -1,6 +1,6 @@
 package br.com.fiap.javaChallenge.service.person;
 
-import br.com.fiap.javaChallenge.datasource.person.AddressRepostory;
+import br.com.fiap.javaChallenge.datasource.person.AddressRepository;
 import br.com.fiap.javaChallenge.domainmodel.person.Address;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class AddressServiceImpl implements AddressService {
 
-    private AddressRepostory repo;
+    private AddressRepository repo;
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
