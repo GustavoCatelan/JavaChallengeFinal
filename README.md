@@ -19,5 +19,3 @@ Instrução de como rodar a aplicação:
 - Execute o aplicativo no IntelliJ.
 - Abra um navegador da web.
 - Acesse a aplicação digitando o URL correspondente.
-- URLs:
-- http://localhost:8080/login
