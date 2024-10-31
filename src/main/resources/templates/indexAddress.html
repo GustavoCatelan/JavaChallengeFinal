@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Address List</title>
+    <title th:text="#{address.list}">Address List</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -95,19 +95,19 @@
 
 <body>
 <div class="container" align="center">
-    <h3>Address List</h3>
-    <a th:href="@{/addNewAddress}" class="btn btn-primary btn-sm btn-mb-3">Add Address</a>
+    <h3 th:text="#{address.list}">Address List</h3>
+    <a th:href="@{/addNewAddress}" class="btn btn-primary btn-sm btn-mb-3" th:text="#{address.add}">Add Address</a>
     <table border="1" class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>CEP</th>
-            <th>Street</th>
-            <th>Number</th>
-            <th>Complement</th>
-            <th>Neighborhood</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Actions</th>
+            <th >CEP</th>
+            <th th:text="#{address.street}">Street</th>
+            <th th:text="#{address.number}">Number</th>
+            <th th:text="#{address.complement}">Complement</th>
+            <th th:text="#{address.neighborhood}">Neighborhood</th>
+            <th th:text="#{address.city}">City</th>
+            <th th:text="#{address.state}">State</th>
+            <th th:text="#{default.action}">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -120,13 +120,13 @@
             <td th:text="${address.city}"></td>
             <td th:text="${address.state}"></td>
             <td>
-                <a th:href="@{/showFormForUpdateAddress/{id}(id=${address.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteAddress/{id}(id=${address.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdateAddress/{id}(id=${address.id})}" class="btn btn-primary" th:text="#{default.update}">Update</a>
+                <a th:href="@{/deleteAddress/{id}(id=${address.id})}" class="btn btn-danger" th:text="#{default.delete}">Delete</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/home}" class="back-home">Back to Home</a>
+    <a th:href="@{/home}" class="back-home" th:text="#{default.backHome}">Back to Home</a>
 </div>
 </body>
 </html>
