@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Service Management System</title>
+  <title th:text="#{service.management}">Service Management System</title>
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -80,17 +80,23 @@
 </head>
 <body>
 <div class="container">
-  <h1>Service Management System</h1>
+  <h1 th:text="#{service.management}">Service Management System</h1>
   <hr>
-  <h2>Save new Service</h2>
+  <h2 th:text="#{service.new}">Save new Service</h2>
   <form action="#" th:action="@{/saveService}" th:object="${service}" method="POST">
-    <input type="text" th:field="*{name}" placeholder="Service Name" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{description}" placeholder="Service Description" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{price}" placeholder="Service Price" class="form-control mb-4 col-4">
-    <button type="submit" class="btn btn-info col-2">Save Service</button>
+    <div class="form-group">
+      <input type="text" th:field="*{name}" th:placeholder="#{service.name}" placeholder="Name" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" th:field="*{description}" th:placeholder="#{product.description}" placeholder="Description" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" th:field="*{price}" th:placeholder="#{product.price}" placeholder="Price" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info" th:text="#{service.save}">Save Service</button>
   </form>
   <hr>
-  <a th:href="@{/service}">Back to Service list</a>
+  <a th:href="@{/service}" th:text="#{service.back}">Back to Service list</a>
 </div>
 </body>
 </html>

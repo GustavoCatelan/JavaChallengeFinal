@@ -82,7 +82,7 @@
 <div class="container">
     <h1 th:text="#{distributor.management}">Distributor Management System</h1>
     <hr>
-    <h2>Save new Distributor</h2>
+    <h2 th:text="#{distributor.new}">Save new Distributor</h2>
     <form action="#" th:action="@{/saveDistributor}" th:object="${distributor}" method="POST">
         <div class="form-group">
             <input type="text" th:field="*{coverageArea}" th:placeholder="#{distributor.coverageArea}" placeholder="Coverage Area" class="form-control">
@@ -93,7 +93,7 @@
         <div class="form-group">
             <input type="text" th:field="*{type}" th:placeholder="#{distributor.type}" placeholder="Type" class="form-control">
         </div>
-        <button type="submit" class="btn btn-info col-2" th:text="#{distributor.save}">Save Distributor</button>
+        <button type="submit" class="btn btn-info" th:text="#{distributor.save}">Save Distributor</button>
     </form>
     <hr>
     <a th:href="@{/distributor}" th:text="#{distributor.back}">Back to Distributor list</a>

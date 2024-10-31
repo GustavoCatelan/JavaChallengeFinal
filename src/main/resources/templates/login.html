@@ -35,6 +35,28 @@
         .alert {
             margin-bottom: 20px;
         }
+
+        .language-selector {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .language-selector select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: #555;
+            background-color: #f9f9f9;
+            outline: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .language-selector select:hover {
+            border-color: #007bff;
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
@@ -60,14 +82,16 @@
         <button type="submit" class="btn btn-primary btn-block" th:text="#{login.button}">Login</button>
     </form>
 
-    <form action="#" method="get">
-        <select name="lang" onchange="this.form.submit()">
-            <option value="pt" th:text="#{language.pt}"
-                    th:attr="selected=${#locale.language == 'pt'}">Português</option>
-            <option value="en" th:text="#{language.en}"
-                    th:attr="selected=${#locale.language == 'en'}">English</option>
-        </select>
-    </form>
+    <div class="language-selector">
+        <form action="#" method="get">
+            <select name="lang" onchange="this.form.submit()">
+                <option value="pt" th:text="#{language.pt}"
+                        th:attr="selected=${#locale.language == 'pt'}">Português</option>
+                <option value="en" th:text="#{language.en}"
+                        th:attr="selected=${#locale.language == 'en'}">English</option>
+            </select>
+        </form>
+    </div>
 </div>
 </body>
 </html>

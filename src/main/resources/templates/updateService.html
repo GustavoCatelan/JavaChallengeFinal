@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Service Management System</title>
+    <title th:text="#{service.management}">Service Management System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
         body {
@@ -76,18 +76,24 @@
 </head>
 <body>
 <div class="container">
-    <h1>Service Management System</h1>
+    <h1 th:text="#{service.management}">Service Management System</h1>
     <hr>
-    <h2>Service Update</h2>
+    <h2 th:text="#{service.update}">Service Update</h2>
     <form action="#" th:action="@{/saveService}" th:object="${service}" method="POST">
         <input type="hidden" th:field="*{id}"/>
-        <input type="text" th:field="*{name}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{description}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{price}" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2">Service Update</button>
+        <div class="form-group">
+            <input type="text" th:field="*{name}" th:placeholder="#{service.name}" placeholder="Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{description}" th:placeholder="#{product.description}" placeholder="Description" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{price}" th:placeholder="#{product.price}" placeholder="Price" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-info" th:text="#{service.update}">Service Update</button>
     </form>
     <hr>
-    <a th:href="@{/service}">Back to Service List</a>
+    <a th:href="@{/service}" th:text="#{service.back}">Back to Service List</a>
 </div>
 </body>
 </html>

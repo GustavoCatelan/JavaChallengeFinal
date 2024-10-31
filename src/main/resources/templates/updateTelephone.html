@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Telephone Management System</title>
+  <title th:text="#{telephone.management}">Telephone Management System</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <style>
     body {
@@ -76,18 +76,24 @@
 </head>
 <body>
 <div class="container">
-  <h1>Telephone Management System</h1>
+  <h1 th:text="#{telephone.management}">Telephone Management System</h1>
   <hr>
-  <h2>Telephone Update</h2>
+  <h2 th:text="#{telephone.update}">Telephone Update</h2>
   <form action="#" th:action="@{/saveTelephone}" th:object="${telephone}" method="POST">
     <input type="hidden" th:field="*{id}"/>
-    <input type="text" th:field="*{ddi}" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{ddd}" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{number}" class="form-control mb-4 col-4">
-    <button type="submit" class="btn btn-info col-2">Telephone Update</button>
+    <div class="form-group">
+      <input type="text" th:field="*{ddi}" th:placeholder="#{telephone.ddi}" placeholder="DDI" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" th:field="*{ddd}" th:placeholder="#{telephone.ddd}" placeholder="DDD" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" th:field="*{number}" th:placeholder="#{telephone.number}" placeholder="Number" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info" th:text="#{telephone.update}">Telephone Update</button>
   </form>
   <hr>
-  <a th:href="@{/telephone}">Back to Telephone List</a>
+  <a th:href="@{/telephone}" th:text="#{telephone.back}">Back to Telephone List</a>
 </div>
 </body>
 </html>

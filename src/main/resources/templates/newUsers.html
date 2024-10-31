@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Users Management System</title>
+    <title th:text="#{users.management}">Users Management System</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -80,16 +80,20 @@
 </head>
 <body>
 <div class="container">
-    <h1>Users Management System</h1>
+    <h1 th:text="#{users.management}">Users Management System</h1>
     <hr>
-    <h2>Save new Users</h2>
+    <h2 th:text="#{users.new}">Save new Users</h2>
     <form action="#" th:action="@{/saveUsers}" th:object="${users}" method="POST">
-        <input type="text" th:field="*{username}" placeholder="Users Username" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{password}" placeholder="Users Password" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2">Save Users</button>
+        <div class="form-group">
+            <input type="text" th:field="*{username}" th:placeholder="#{users.username}" placeholder="Username" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{password}" th:placeholder="#{users.password}" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-info" th:text="#{users.save}">Save Users</button>
     </form>
     <hr>
-    <a th:href="@{/users}">Back to Users list</a>
+    <a th:href="@{/users}" th:text="#{users.back}">Back to Users list</a>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Physical Person List</title>
+    <title th:text="#{physicalPerson.list.title}">Physical Person List</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -95,15 +95,15 @@
 
 <body>
 <div class="container" align="center">
-    <h3>Physical Person List</h3>
-    <a th:href="@{/addNewPhysicalPerson}" class="btn btn-primary btn-sm btn-mb-3">Add Physical Person</a>
+    <h3 th:text="#{physicalPerson.list.title}">Physical Person List</h3>
+    <a th:href="@{/addNewPhysicalPerson}" class="btn btn-primary btn-sm btn-mb-3" th:text="#{physicalPerson.add}">Add Physical Person</a>
     <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>CPF</th>
-            <th>RG</th>
-            <th>Actions</th>
+            <th th:text="#{physicalPerson.name}">Name</th>
+            <th th:text="#{physicalPerson.cpf}">CPF</th>
+            <th th:text="#{physicalPerson.rg}">RG</th>
+            <th th:text="#{default.action}">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -112,13 +112,13 @@
             <td th:text="${physicalPerson.cpf}"></td>
             <td th:text="${physicalPerson.rg}"></td>
             <td>
-                <a th:href="@{/showFormForUpdatePhysicalPerson/{id}(id=${physicalPerson.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deletePhysicalPerson/{id}(id=${physicalPerson.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdatePhysicalPerson/{id}(id=${physicalPerson.id})}" class="btn btn-primary" th:text="#{default.update}">Update</a>
+                <a th:href="@{/deletePhysicalPerson/{id}(id=${physicalPerson.id})}" class="btn btn-danger" th:text="#{default.delete}">Delete</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/home}">Back to Home</a>
+    <a th:href="@{/home}" th:text="#{default.backHome}">Back to Home</a>
 </div>
 </body>
 </html>

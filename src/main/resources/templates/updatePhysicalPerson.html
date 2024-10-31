@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Physical Person Management System</title>
+    <title th:text="#{physicalPerson.management}">Physical Person Management System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
         body {
@@ -76,18 +76,24 @@
 </head>
 <body>
 <div class="container">
-    <h1>Physical Person Management System</h1>
+    <h1 th:text="#{physicalPerson.management}">Physical Person Management System</h1>
     <hr>
-    <h2>Physical Person Update</h2>
+    <h2 th:text="#{physicalPerson.update}">Physical Person Update</h2>
     <form action="#" th:action="@{/savePhysicalPerson}" th:object="${physicalPerson}" method="POST">
         <input type="hidden" th:field="*{id}"/>
-        <input type="text" th:field="*{name}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{cpf}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{rg}" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2">Physical Person Update</button>
+        <div class="form-group">
+            <input type="text" th:field="*{name}" th:placeholder="#{physicalPerson.name}" placeholder="Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{cpf}" th:placeholder="#{physicalPerson.cpf}" placeholder="CPF" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{rg}" th:placeholder="#{physicalPerson.rg}" placeholder="RG" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-info" th:text="#{physicalPerson.update}">Physical Person Update</button>
     </form>
     <hr>
-    <a th:href="@{/physicalPerson}">Back to Physical Person List</a>
+    <a th:href="@{/physicalPerson}" th:text="#{physicalPerson.back}">Back to Physical Person List</a>
 </div>
 </body>
 </html>
