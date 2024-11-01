@@ -61,4 +61,9 @@ public class HomeController {
         return "indexService";
     }
 
+    @GetMapping("/indexIa")
+    public String indexIa() {
+        return "indexIa";
+    }
+
 }

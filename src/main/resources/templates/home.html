@@ -66,6 +66,27 @@
             margin-top: 20px;
             font-weight: 500;
         }
+
+        /* Botão fixo no canto inferior direito */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .floating-button:hover {
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +116,8 @@
 <ul>
     <li><a href="/login" th:text="#{home.logout}">Logout</a></li>
 </ul>
+
+<a href="/indexIa" class="floating-button">IA</a>
 
 </body>
 </html>
