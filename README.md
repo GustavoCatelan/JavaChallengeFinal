@@ -1,45 +1,51 @@
-Nome da aplicação: InovaX
+InovaX
 
-Integrantes:
+Integrantes do Projeto
 
-2TDSPJ - Lucas dos Santos Lopes - RM550790
+Turma: 2TDSPJ
 
-2TDSPJ - Gustavo Marques Catelan - RM551823
+	•	Lucas dos Santos Lopes - RM550790
+	•	Gustavo Marques Catelan - RM551823
+	•	Murilo Machado - RM550718
+	•	Victor Taborda Rodrigues - RM97900
+	•	Gabriel Bacelar Valentim - RM97901
 
-2TDSPJ - Murilo Machado - RM550718
+Requisitos de Instalação
 
-2TDSPJ - Victor Taborda Rodrigues - RM97900
+Para rodar a aplicação InovaX, siga os passos a seguir:
 
-2TDSPJ - Gabriel Bacelar Valentim - RM97901
+1. Clonando o Repositório
 
-Instrução de como rodar a aplicação:
-- Clone o repositório do projeto InovaX.
-- Abra o IntelliJ IDEA.
-- Importe o projeto InovaTech no IntelliJ.
-- Baixe o RabbiMq:
-1. Instalação no Windows
+Primeiro, clone o repositório do projeto InovaX:
+•	git clone https://github.com/GustavoCatelan/JavaChallengeFinal.git
+
+2. Configuração do Ambiente no IntelliJ IDEA
+
+	•	Abra o IntelliJ IDEA.
+	•	Importe o projeto InovaTech.
+
+3. Configuração do RabbitMQ
+
+No Windows
 
 	1.	Instalar o Erlang:
 	•	Baixe o instalador do Erlang para Windows no site oficial: https://www.erlang.org/downloads.
-	•	Instale o Erlang e anote o diretório de instalação, pois ele será necessário para o RabbitMQ funcionar.
+	•	Instale o Erlang e anote o diretório de instalação.
 	2.	Instalar o RabbitMQ:
 	•	Baixe o instalador do RabbitMQ para Windows no site oficial: https://www.rabbitmq.com/install-windows.html.
-	•	Durante a instalação, o RabbitMQ deverá detectar automaticamente o Erlang. Se não detectar, configure a variável de ambiente ERLANG_HOME com o caminho do diretório de instalação do Erlang.
+	•	O RabbitMQ deve detectar automaticamente o Erlang. Se não detectar, configure a variável de ambiente ERLANG_HOME com o caminho do diretório de instalação do Erlang.
 
-2. Instalação no macOS:
+No macOS
 
-  1. Instalar o Erlang:
-	•	Abra o Terminal e execute:
-    - brew install erlang
-  2. Instalar o RabbitMQ:
-	•	Em seguida, instale o RabbitMQ com:
-    - brew install rabbitmq 
-  3. Iniciar o RabbitMQ:
-	•	Para iniciar o RabbitMQ manualmente, você pode usar:
-   - brew services start rabbitmq
-     
-- Execute o aplicativo no IntelliJ.
-- Abra um navegador da web.
-- Acesse a aplicação digitando o URL correspondente.
-- URL: http://localhost:8080/login
+	1.	Instalar o Erlang:
+ •	brew install erlang
+ 	2.	Instalar o RabbitMQ:
+ •	brew install rabbitmq
+	3.	Iniciar o RabbitMQ:
+ •	brew services start rabbitmq
+ 
+4. Executando o Projeto
 
+	1.	No IntelliJ, execute o aplicativo.
+	2.	Abra um navegador web.
+	3.	Acesse a aplicação através do URL: http://localhost:8080/login
