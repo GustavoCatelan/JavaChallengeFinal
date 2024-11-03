@@ -55,7 +55,7 @@ public class IaService {
             Logger.getLogger(IaService.class.getName()).log(Level.INFO, "Request Body: " + requestBody);
         } catch (JsonProcessingException ex) {
             Logger.getLogger(IaService.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException("Failed to construct JSON request body object representation!");
+            throw new RuntimeException("Failed to construct JSON request body object representation");
         }
         return requestBody;
     }
