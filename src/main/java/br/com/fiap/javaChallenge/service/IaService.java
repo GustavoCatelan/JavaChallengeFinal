@@ -20,7 +20,6 @@ public class IaService {
     @Autowired
     private RestTemplate restTemplate;
 
-    // Atualize a URL da API do Gemini
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=%s";
 
     private static final String API_KEY = "AIzaSyDqn8DBS6fCSY3LyvzLP1vrSUg_kf5W0Zc";
@@ -46,7 +45,7 @@ public class IaService {
     private String requestJSONCreator(final String prompt) throws RuntimeException {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode requestBodyNode = objectMapper.createObjectNode();
-        requestBodyNode.put("model", "gemini"); // Altere o modelo, se necessário
+        requestBodyNode.put("model", "gemini");
         requestBodyNode.set("messages", objectMapper.createArrayNode()
                 .add(objectMapper.createObjectNode().put("role", "user").put("content", prompt)));
 
