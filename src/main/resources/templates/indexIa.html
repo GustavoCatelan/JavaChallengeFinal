@@ -84,17 +84,30 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(prompt)
+                body: JSON.stringify({
+                    model: "gemini-1.5-flash",
+                    input: {
+                        messages: [{
+                            role: "user",
+                            content: prompt
+                        }]
+                    }
+                })
             });
 
             if (response.ok) {
-                const data = await response.text();
-                document.getElementById("resposta").innerText = data;
+                const data = await response.json();
+
+                const answer = data.candidates[0].content.parts[0].text;
+
+                document.getElementById("resposta").innerText = answer;
+                console.log("Resposta da API:", answer);
             } else {
-                document.getElementById("resposta").innerText = 'Erro ao obter resposta da API.';
+                document.getElementById("resposta").innerText = "Erro ao obter resposta da API.";
             }
         }
     </script>
+
 </head>
 <body>
 <h1 th:text="#{api.title}">API Query</h1>
